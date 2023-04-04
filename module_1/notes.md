@@ -74,3 +74,12 @@ docker rmi $(docker images -q)
 
 docker rm $(docker ps -a -q) && docker rmi $(docker images -q)
 
+##### Specify volume for a nginx container, using PWD
+
+docker run -it -v $PWD:/usr/share/nginx/html -p 8080:80 nginx
+
+##### Specify volume for a nginx container, using PWD and run in background
+
+docker run -d -v ${PWD}:/usr/share/nginx/html -p 8080:80 nginx
+
+
