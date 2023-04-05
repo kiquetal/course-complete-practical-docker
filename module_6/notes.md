@@ -61,3 +61,19 @@
         && pip install --upgrade pywinrm \
         && pip install --upgrade requests \
         && pip install --upgrade
+
+#### Build image using a script in node located in node/hello.js using volume mount, 
+#### specify a namefor the container
+
+    docker run -it --name nodejs_container -v ${PWD}:/app -w /app node node hello.js
+
+#### Build nodejs app using express and some third-party library specified in package.json
+
+    docker run  -it --name nodejs_container -v ${PWD}:/app -w /app  node  npm init
+
+    docker run -it --name nodejs_container -v ${PWD}:/app -w /app  node  node index.js
+
+### Add handling SIGINT AND SIGTERM signals
+
+    docker run -it --name nodejs_container -v ${PWD}:/app -w /app  node  node index.js
+
