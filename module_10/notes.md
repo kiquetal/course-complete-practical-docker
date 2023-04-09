@@ -23,5 +23,5 @@
     docker run -it --network mysql -e PMA_HOST=mysql --name phpmyadmin phpmyadmin/phpmyadmin
 
     docker run -it --network mysql -e MYSQL_HOST=mysql --name wordpress wordpress
-
+:
 
