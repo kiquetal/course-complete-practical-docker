@@ -46,4 +46,17 @@
 
     curl -X GET http://elasticsearch_locally:9200/my-index/_search?q=city:London
 
+#### Pull redis
+
+    docker pull redis
+
+#### Run redis
+
+    docker run -it -p 6379:6379 --name my_redis redis
+
+#### Challenge using redis and rediscommander/redis-commander
+
+        docker pull rediscommander/redis-commander
+    
+        docker run -it -p 8081:8081 --network redis -e REDIS_HOSTS=my_redis rediscommander/redis-commander
 
